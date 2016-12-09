@@ -15,7 +15,7 @@ protocol BoardViewDelegate {
 
 class BoardView: UIView {
     
-    var subViewArray: [[BoardViewField]] = [[]]
+    var subViewArray: [[BoardViewField]] = [[], [], []]
     
     var delegate: BoardViewDelegate?
     
@@ -28,7 +28,7 @@ class BoardView: UIView {
             for y in 0...2 {
                 // configure each subview in the tic tac toe table
                 let subViewFrame = CGRect(x: (x * sideLength / 3), y: (y * sideLength / 3), width: sideLength/3, height: sideLength/3)
-                let subView = BoardViewField(frame: subViewFrame, x: x, y: y)
+                let subView = BoardViewField(frame: subViewFrame, x: x, y: y, sideLength: Double(sideLength/3))
                 subView.layer.borderWidth = 1
                 subView.backgroundColor = .white
                 
