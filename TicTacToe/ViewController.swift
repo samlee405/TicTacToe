@@ -9,16 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var board = Board()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Get screen size
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width * 0.8
+        
+        // Initialize the boardView on screen
+        let boardView = BoardView(sideLength: Int(screenWidth))
+        board.boardView = boardView
+        view.addSubview(board.boardView!)
+        board.boardView?.center = view.center
+        board.boardView?.delegate = board
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
 
 
 }

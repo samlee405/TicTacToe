@@ -12,6 +12,11 @@
 		EF3E43961DF88ECE009B7260 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3E43941DF88ECE009B7260 /* Main.storyboard */; };
 		EF3E43981DF88ECE009B7260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3E43971DF88ECE009B7260 /* Assets.xcassets */; };
 		EF3E439B1DF88ECE009B7260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3E43991DF88ECE009B7260 /* LaunchScreen.storyboard */; };
+		EF3E43A31DF89317009B7260 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E43A21DF89317009B7260 /* Player.swift */; };
+		EF3E43A51DF89326009B7260 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E43A41DF89326009B7260 /* BoardView.swift */; };
+		EF3E43A71DF89378009B7260 /* BoardViewField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E43A61DF89378009B7260 /* BoardViewField.swift */; };
+		EF3E43A91DF89398009B7260 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E43A81DF89398009B7260 /* Board.swift */; };
+		EF3E43AD1DF89E84009B7260 /* BoardViewFieldContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E43AC1DF89E84009B7260 /* BoardViewFieldContents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		EF3E43971DF88ECE009B7260 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF3E439A1DF88ECE009B7260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF3E439C1DF88ECE009B7260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3E43A21DF89317009B7260 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		EF3E43A41DF89326009B7260 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		EF3E43A61DF89378009B7260 /* BoardViewField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewField.swift; sourceTree = "<group>"; };
+		EF3E43A81DF89398009B7260 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		EF3E43AC1DF89E84009B7260 /* BoardViewFieldContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewFieldContents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +66,33 @@
 			children = (
 				EF3E43901DF88ECE009B7260 /* AppDelegate.swift */,
 				EF3E43921DF88ECE009B7260 /* ViewController.swift */,
+				EF3E43A81DF89398009B7260 /* Board.swift */,
+				EF3E43AA1DF893CB009B7260 /* Model */,
+				EF3E43AB1DF893D9009B7260 /* View */,
 				EF3E43941DF88ECE009B7260 /* Main.storyboard */,
 				EF3E43971DF88ECE009B7260 /* Assets.xcassets */,
 				EF3E43991DF88ECE009B7260 /* LaunchScreen.storyboard */,
 				EF3E439C1DF88ECE009B7260 /* Info.plist */,
 			);
 			path = TicTacToe;
+			sourceTree = "<group>";
+		};
+		EF3E43AA1DF893CB009B7260 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF3E43A21DF89317009B7260 /* Player.swift */,
+				EF3E43AC1DF89E84009B7260 /* BoardViewFieldContents.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EF3E43AB1DF893D9009B7260 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF3E43A41DF89326009B7260 /* BoardView.swift */,
+				EF3E43A61DF89378009B7260 /* BoardViewField.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +168,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF3E43AD1DF89E84009B7260 /* BoardViewFieldContents.swift in Sources */,
 				EF3E43931DF88ECE009B7260 /* ViewController.swift in Sources */,
+				EF3E43A51DF89326009B7260 /* BoardView.swift in Sources */,
+				EF3E43A91DF89398009B7260 /* Board.swift in Sources */,
+				EF3E43A71DF89378009B7260 /* BoardViewField.swift in Sources */,
+				EF3E43A31DF89317009B7260 /* Player.swift in Sources */,
 				EF3E43911DF88ECE009B7260 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
