@@ -9,10 +9,17 @@
 import Foundation
 import UIKit
 
+protocol BoardDelegate {
+    func updateWinnerOnScreen(winner: BoardViewFieldContents, turnCount: Int)
+}
+
 class Board: BoardViewDelegate {
+    
+    var delegate: BoardDelegate?
     
     var boardView: BoardView?
     var currentTurn: Player = .x
+    var turnCounter: Int = 0
     var gameData: [[BoardViewFieldContents]] = [[.empty, .empty, .empty],
                                                 [.empty, .empty, .empty],
                                                 [.empty, .empty, .empty]]
@@ -23,6 +30,7 @@ class Board: BoardViewDelegate {
     
     func move(x: Int, y: Int) {
         if gameData[x][y] == .empty && winner() == .empty {
+            turnCounter += 1
             if currentTurn == .o {
                 gameData[x][y] = .o
                 boardView?.subViewArray[x][y].label?.text = "O"
@@ -33,8 +41,8 @@ class Board: BoardViewDelegate {
                 boardView?.subViewArray[x][y].label?.text = "X"
                 currentTurn = .o
             }
-            if winner() != .empty {
-                print(winner())
+            if winner() != .empty || turnCounter == 9 {
+                delegate?.updateWinnerOnScreen(winner: winner(), turnCount: turnCounter)
             }
         }
         else {
@@ -74,6 +82,18 @@ class Board: BoardViewDelegate {
         }
         else {
             return .empty
+        }
+    }
+    
+    func resetGame() {
+        gameData = [[.empty, .empty, .empty],
+                    [.empty, .empty, .empty],
+                    [.empty, .empty, .empty]]
+        
+        for x in 0...2 {
+            for y in 0...2 {
+                boardView?.subViewArray[x][y].label?.text = nil
+            }
         }
     }
 }
